@@ -3575,7 +3575,7 @@ class WsdlToPhpGenerator extends SoapClient
          * Display debug
          */
         if(!$_createOnly && self::getOptionDebug())
-            echo "\n" . date('Y-m-d H:i:s') . " - {$_auditName} - {$_auditElement}";
+            echo "\n" , date('Y-m-d H:i:s') , " - {$_auditName} - {$_auditElement}";
         return true;
     }
     /**

@@ -33,7 +33,7 @@ require_once $localDir . 'WsdlToPhpStructAttribute.php';
  */
 if(false)
 {
-    echo "\r\n Clean Name for '2And'is-go54  83od+*/you=yèçés_3' is " . WsdlToPhpModel::cleanString("2And'is-go54  83od+*/you=yéçès_3") . " \r\n";
+    echo "\r\n Clean Name for '2And'is-go54  83od+*/you=yèçés_3' is " , WsdlToPhpModel::cleanString("2And'is-go54  83od+*/you=yéçès_3") , " \r\n";
     return;
 }
 /**
@@ -117,7 +117,7 @@ if(true)
     $name = 'PayPal';
     $wsdl = 'https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl';
     exec('rm -rf ' . __DIR__ . '/samples/' . $name . '/*;');
-    echo "\r\nStart at " . date('H:i:s');
+    echo "\r\nStart at " , date('H:i:s');
     $w = new WsdlToPhpGenerator($wsdl);
     WsdlToPhpGenerator::setOptionGenerateAutoloadFile(true);
     WsdlToPhpGenerator::setOptionGenerateWsdlClassFile(true);
@@ -128,13 +128,13 @@ if(true)
                                                     'date'=>date('Y-m-d'),
                                                     'author'=>'Mikaël DELSOL',
                                                     'version'=>1));
-    echo "\r\nStart generation at " . date('H:i:s');
+    echo "\r\nStart generation at " , date('H:i:s');
     $w->generateClasses($name,dirname(__FILE__) . '/samples/' . $name . '/');
-    echo "\r\nEnd generation at " . date('H:i:s');
-    echo "\r\nGenerate doc start " . date('H:i:s');
+    echo "\r\nEnd generation at " , date('H:i:s');
+    echo "\r\nGenerate doc start " , date('H:i:s');
     $ouputs = array();
     exec('rm -rf ' . __DIR__ . '/docs/' . $name . '/* && clear && phpdoc --sourcecode on -d ' . __DIR__ . '/samples/' . $name . ' -t ' . __DIR__ . '/docs/' . $name . ' -pp -ti "' . ucfirst($name) . ' package documentation" -o HTML:frames:DOM/earthli;',$ouputs);
     print_r($ouputs);
-    echo "\r\nGenerate doc end " . date('H:i:s');
+    echo "\r\nGenerate doc end " , date('H:i:s');
     print_r($w->getAudit());
 }
